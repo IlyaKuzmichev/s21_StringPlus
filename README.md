@@ -1,3 +1,3 @@
-# s21_StringPlus Own implementation of string.h library + sprintf/sscanf functiolns 
+# s21_StringPlus
 
-### Implementation of the string.h library with additions.
+### Own Implementation of the string.h library with additions.
