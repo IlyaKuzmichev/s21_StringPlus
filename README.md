@@ -8,11 +8,11 @@
 
 1. [Information](#information) 
 2. [Task](#task) \
-   2.1. [Part 1](#part-1-implementation-of-the-string-.-h-library-functions)  
-   2.2. [Part 2](#part-2-partial-implementation-of-the-sprintf-function)  
-   2.3. [Part 3](#part-3-bonus-implementation-of-some-format-modifiers-of-the-sprintf-function)  
-   2.4. [Part 4](#part-4-bonus-implementation-of-the-sscanf-function)
-   2.5. [Part 5](#part-5-bonus-implementation-of-special-string-processing-functions)
+   2.1. [Part 1](#part-1-implementation-of-the-string-library-functions)  \
+   2.2. [Part 2](#part-2-partial-implementation-of-the-sprintf-function)  \
+   2.3. [Part 3](#part-3-bonus-implementation-of-some-format-modifiers-of-the-sprintf-function)  \
+   2.4. [Part 4](#part-4-bonus-implementation-of-the-sscanf-function) \
+   2.5. [Part 5](#part-5-bonus-implementation-of-special-string-processing-functions) 
 3. [Implementation](#implementation) 
 
 ## Information
@@ -127,7 +127,7 @@ where:
 
 ## Task
 
-### Part 1. Implementation of the string.h library functions
+### Part 1. Implementation of the string library functions
 
 It is necessary to implement the described functions of the string.h library: 
  - The library must be developed in C language of C11 standard using gcc compiler
