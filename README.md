@@ -8,7 +8,7 @@
 
 1. [Information](#information) 
 2. [Task](#task) \
-   2.1. [Part 1](#part-1-implementation-of-the-string.h-library-functions)  
+   2.1. [Part 1](#part-1-implementation-of-the-string-.-h-library-functions)  
    2.2. [Part 2](#part-2-partial-implementation-of-the-sprintf-function)  
    2.3. [Part 3](#part-3-bonus-implementation-of-some-format-modifiers-of-the-sprintf-function)  
    2.4. [Part 4](#part-4-bonus-implementation-of-the-sscanf-function)
