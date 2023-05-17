@@ -4,8 +4,6 @@
 #include <wchar.h>
 
 #include "s21_string.h"
-// #include
-// "/Users/igor/Coding/S21/C2_s21_stringplus-1/src/s21_string_basic_functions/s21_special_processing_funcs.c"
 #define LEN 512
 
 void to_upper_single() {

@@ -237,13 +237,11 @@ char *int_to_str(long double integer, s21_size_t *length) {
 
 void reverse_string(char **str) {
   s21_size_t len = s21_strlen(*str);
-  // char *buf = (char *)calloc(len + 1, sizeof(char));
   for (s21_size_t i = 0, j = len - 1; i < j; ++i, --j) {
     char tmp = (*str)[i];
     (*str)[i] = (*str)[j];
     (*str)[j] = tmp;
-  }  // s21_strcpy(*str, buf);
-  // free(buf);
+  }
 }
 
 char *dec_proc(long double decimal, s21_size_t precision,
