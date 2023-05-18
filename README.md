@@ -189,7 +189,7 @@ Bonus assignment for extra points. You must implement some string processing fun
   
 ## Implementation
 
-* The program was developed and implemented on MacOs Big Sur Version 11.6.6 and repeats the behavior of the standard string.h library functions and fprintf, fscanf from stdio.h
+* The program was developed and implemented on MacOs Big Sur Version 11.6.6 and repeats the behavior of the standard `string.h` library functions and `sprintf, sscanf` from stdio.h
 * You may build static library by running Makefile with `make` or `make s21_string.a` and use in your own projects in C language
 * To run unit tests check.h library needs to be installed, target `make test`, it builds another library for testing with flags of coverage
 * You may check test's coverage, for `make gcov_report` you must have the `lcov` utility installed
