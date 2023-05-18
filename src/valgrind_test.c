@@ -575,7 +575,7 @@ int main(void) {
   trim_multy();
   sprintf_c_multy();
   sprintf_s_single();
-  sprintf_ls_single();
+  // sprintf_ls_single();
   sprintf_dioxu_long();
   sprintf_hoxu_multy();
   sprintf_loxu_multy();

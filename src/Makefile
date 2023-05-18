@@ -76,8 +76,8 @@ all_functions: $(SOURCES) $(SPRINT_SOURCES) $(SSCAN_SOURCES)
 rebuild: clean all
 
 valgrinder: s21_string.a
-	gcc -o $(VALGRIND_EXEC) -Wall -Werror -Wextra $(VALGRIND_SOURCES) s21_string.a
-	valgrind --tool=memcheck --leak-check=full --track-origins=yes --num-callers=20 --track-fds=yes ./$(VALGRIND_EXEC)
+	gcc -o $(VALGRIND_EXEC) -Wall -Werror -Wextra $(VALGRIND_SOURCES) s21_string.a -lm
+	valgrind --tool=memcheck --leak-check=full --track-origins=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./$(VALGRIND_EXEC) 1 > /dev/null
 
 clean: 
 	@rm -rf  $(OBJECTS) $(SPRINT_OBJECTS) $(SSCAN_OBJECTS) $(GCDA_FILES) $(GCNO_FILES) $(GCOV_FILES) 
