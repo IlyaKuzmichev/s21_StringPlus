@@ -27,7 +27,9 @@ jobs:
           brew install check
 
       - name: Build project
+        working-directory: ./src
         run: make
 
       - name: Run tests
+        working-directory: ./src
         run: make test
