@@ -16,7 +16,7 @@ OBJECTS=$(SOURCES:.c=.o)
 TESTS_SOURCES=test.c
 
 VALGRIND_SOURCES=valgrind_test.c
-VALGRIND_EXEC=./valgrind_test.out
+VALGRIND_EXEC=valgrind_test.out
 
 
 FORMAT_HEADERS=s21_string_format_functions/s21_format.h
@@ -64,7 +64,7 @@ report_nolcov:
 
 test: test_s21_string.a
 	$(CC) -g $(TESTS_SOURCES) $(TESTFLAGS) $(GCOVFLAGS) -L. s21_string.a -o test.out
-	./test.out; true
+	./test.out
 
 test_s21_string.a: all_functions
 	ar rcs s21_string.a *.o
@@ -75,20 +75,19 @@ all_functions: $(SOURCES) $(SPRINT_SOURCES) $(SSCAN_SOURCES)
 
 rebuild: clean all
 
-valgrinder:
-	valgrind --tool=memcheck --leak-check=full --track-origins=yes --num-callers=20 --track-fds=yes $(VALGRIND_EXEC)
+valgrinder: s21_string.a
+	gcc -o $(VALGRIND_EXEC) -Wall -Werror -Wextra $(VALGRIND_SOURCES) s21_string.a
+	valgrind --tool=memcheck --leak-check=full --track-origins=yes --num-callers=20 --track-fds=yes ./$(VALGRIND_EXEC)
 
 clean: 
 	@rm -rf  $(OBJECTS) $(SPRINT_OBJECTS) $(SSCAN_OBJECTS) $(GCDA_FILES) $(GCNO_FILES) $(GCOV_FILES) 
 	@rm -rf report/ s21_string.a *.gcda *.gcno *.gcov *.out *.info *.o coverage.txt
-.clang-format:
-	@cp ../materials/linters/.clang-format .
 	
-stylecheck: .clang-format
-	@clang-format -n $(FILES_TO_CHECK)
+stylecheck: 
+	@clang-format -style=Google -n $(FILES_TO_CHECK)
 	
 fmt: .clang-format
-	@clang-format -i $(FILES_TO_CHECK)
+	@clang-format -style=Google -n $(FILES_TO_CHECK)
 
 cppcheck:
 	cppcheck --enable=all --suppress=missingIncludeSystem $(FILES_TO_CHECK)

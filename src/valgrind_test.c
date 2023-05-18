@@ -590,9 +590,3 @@ int main(void) {
 
   return 0;
 }
-
-/*
-gcc -o main.out -Wall -Werror -Wextra main.c s21_string.a
-valgrind --tool=memcheck --leak-check=full --track-origins=yes
---show-reachable=yes --num-callers=20 --track-fds=yes ./main.out
-*/
