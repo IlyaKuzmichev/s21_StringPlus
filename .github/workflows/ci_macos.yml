@@ -20,7 +20,26 @@ jobs:
       
       - name: Checkout code
         uses: actions/checkout@v3
-        
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Build project
+        working-directory: ./src
+        run: make
+
+  test:
+    runs-on: macos-latest
+
+    needs: build
+
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.ref }}
 
@@ -28,10 +47,6 @@ jobs:
         run: |
           brew update
           brew install check
-
-      - name: Build project
-        working-directory: ./src
-        run: make
 
       - name: Run tests
         working-directory: ./src
